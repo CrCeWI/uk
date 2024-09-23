@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head >
+<title>Critter Cove WIKI</title>
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff"> 
+</head>
+<body>
+    <select class="lang">
+    <option value="uk">uk</option>
+    <option value="en">en</option>
+    </select>
+
+<p><img src="https://crcewi.github.io/logo.png" alt="logo" width="180" height="180" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;">Проект знаходиться в розробці.</p>
+
+
+<p style="text-align: center;"><iframe src="https://store.steampowered.com/widget/1631470/" frameborder="0" width="646" height="190"></iframe></p>
+<p style="text-align: center;"><iframe src="https://store.steampowered.com/widget/3021940/" frameborder="0" width="646" height="190"></iframe></iframe></p>
+    
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+        const select = document.querySelector(".lang");
+        let url = window.location.href, value, reg;
+        for ({ value } of select.options) {
+            reg = new RegExp(`/${value}/`);
+            if (value && reg.test(url)) {
+                select.value = value;
+                break;
+            }
+        };
+        select.addEventListener("change", _ => {
+        if(!select.value) return;
+        url = url.replace(reg, `/${select.value}/`);
+        window.location.href = url;
+        })
+    });
+</script>
+</html>
